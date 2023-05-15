@@ -1,0 +1,704 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet');
+
+
+*
+{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif !important;
+  -webkit-font-feature-settings: 'pnum' on, 'lnum' on;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}
+
+
+
+.ex_b
+{
+  font-family: 'FractulExtraBold', sans-serif !important;
+}
+
+
+
+h1,h2,h3,h4,h5,h6,p,ul,hr
+{
+  margin: 0;
+  padding: 0;
+}
+
+.card
+{
+  border: none;
+}
+
+a, input, button
+{
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+
+  &:hover
+  {
+    outline: none;
+    text-decoration: none;
+  }
+}
+
+input[type=submit], button
+{
+  border: none;
+  cursor: pointer;
+}
+
+input:not([type=checkbox]):not([type=radio]),
+textarea,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@mixin df($fd,$jc,$ai)
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: $fd;
+  -ms-flex-direction: $fd;
+  flex-direction: $fd;
+  -webkit-box-pack: $jc;
+  -webkit-justify-content: $jc;
+  -ms-flex-pack: $jc;
+  justify-content: $jc;
+  -webkit-box-align: $ai;
+  -webkit-align-items: $ai;
+  -ms-flex-align: $ai;
+  align-items: $ai;
+}
+@mixin df-r-sb-c()
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+@mixin df-r-fs-c()
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+@mixin df-r-c-c()
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+@mixin df-r-fe-c()
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+@mixin df-r-c-fs()
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+@mixin df-r-c-s()
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+@mixin df-r-fs-fe()
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+@mixin df-r-sb-fs()
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+@mixin df-r-fs-s()
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+@mixin df-r-fs-fs()
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+@mixin df-r-sb-s()
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+@mixin df-r-c-fe()
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+@mixin df-r-fe-fe()
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+@mixin df-r-sb-fe()
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+
+@mixin df-r-fe-fs()
+{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+
+
+$main_color: #55CCFF;
+$main_color2: #8482A2;
+$main_color3: #6D7AD4;
+$main_color4: #FFC444;
+$main_color5: #271567;
+$main_color6: #4218C9;
+$white: #fff;
+$black: #000;
+$dark: #222;
+$dark2: #A5A5A5;
+$grey: #ccc;
+$max_width: 1200px;
+
+
+.mw
+{
+  width: 100%;
+  max-width: $max_width;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+.fancybox-slide:before
+{
+  margin: 0;
+}
+
+.scrollup {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: $main_color;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  display: none;
+  z-index: 1000;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 10px 0 rgba($white,0.5);
+  box-shadow: 0 0 10px 0 rgba($white,0.5);
+
+  img
+  {
+    width: 20px;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  .fas_icon {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &.active {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+
+.fancybox-bg
+{
+  background: rgba(6, 0, 28, 0.9) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.fancybox-content
+{
+  border-radius: 30px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99999999;
+  overflow: auto;
+  background: #302065!important;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  max-width: 400px;
+  padding: 0 !important;
+  -webkit-box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.25);
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .fancybox-close-small
+  {
+    color: $dark2!important;
+  }
+
+  .m-content {
+    max-width: 500px;
+    position: relative;
+    -webkit-box-shadow: 0px 40px 60px rgba(109, 109, 109, 0.25);
+    box-shadow: 0px 40px 60px rgba(109, 109, 109, 0.25);
+    background: url("../images/form_bg.jpg") no-repeat center center / cover;
+
+    .c {
+      width: 100%;
+      padding: 60px;
+
+      h3
+      {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 140%;
+        color: $white;
+        margin-bottom: 30px;
+        text-align: center;
+        font-family: 'GilroyBold', sans-serif!important;
+      }
+
+      .success_h3
+      {
+        display: inline-block;
+        text-align: center;
+        margin: 0 auto 30px;
+        font-size: 35px;
+        font-weight: 900;
+        color: $white;
+        font-family: 'GilroyBlack', sans-serif!important;
+      }
+
+      p
+      {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 140%;
+        text-align: center;
+        color: $main_color2;
+      }
+
+      form
+      {
+        width: 100%;
+        max-width: 500px;
+
+        .inp
+        {
+          margin-bottom: 20px;
+        }
+
+        input, textarea
+        {
+          border: 1px solid #BAC0EA;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          border-radius: 10px;
+          height: 50px;
+          background-color: transparent!important;
+          width: 100%;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 140%;
+          color: $white;
+          padding: 15px;
+
+          &::-webkit-input-placeholder
+          {
+            color: rgba(255, 255, 255, 0.4);
+          }
+
+          &::-moz-placeholder
+          {
+            color: rgba(255, 255, 255, 0.4);
+          }
+
+          &:-ms-input-placeholder
+          {
+            color: rgba(255, 255, 255, 0.4);
+          }
+
+          &::-ms-input-placeholder
+          {
+            color: rgba(255, 255, 255, 0.4);
+          }
+
+          &::placeholder
+          {
+            color: rgba(255, 255, 255, 0.4);
+          }
+        }
+
+        .btn_c
+        {
+          @include df-r-c-c();
+          margin-top: 15px;
+        }
+
+        .policy
+        {
+          color: $dark;
+          font-size: 16px;
+          line-height: 20px;
+          width: 100%;
+          display: block;
+
+          a
+          {
+            color: $main_color;
+
+            &:hover
+            {
+              color: $white;
+            }
+          }
+
+          input
+          {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@media (max-width: 575px)
+{
+  .scrollup
+  {
+    right: 10px;
+    bottom: 50px;
+  }
+
+  .modal {
+    .m-content {
+      max-width: 500px;
+      width: 100%;
+
+      .c {
+        padding: 40px 20px;
+
+        h3
+        {
+          font-size: 22px;
+        }
+
+        .success_h3
+        {
+          font-size: 30px;
+        }
+
+        form
+        {
+          input
+          {
+            height: 45px;
+            padding: 12px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+.wpcf7-not-valid-tip
+{
+  display: none!important;
+}
+
+.wpcf7-not-valid
+{
+  border-color: #f00!important;
+}
+
+.wpcf7-response-output
+{
+  display: none!important;
+}
+.wpcf7-spinner
+{
+  display: none!important;
+}
+
